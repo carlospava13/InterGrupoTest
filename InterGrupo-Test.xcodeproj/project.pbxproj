@@ -9,13 +9,18 @@
 /* Begin PBXBuildFile section */
 		C961E2508BC5D5F7C9207E52 /* Pods_InterGrupo_TestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CCFA2B6217B8988F2DD41DF /* Pods_InterGrupo_TestTests.framework */; };
 		D18794B4208BD2A600450AAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18794B3208BD2A600450AAE /* AppDelegate.swift */; };
-		D18794B6208BD2A700450AAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18794B5208BD2A700450AAE /* ViewController.swift */; };
 		D18794B9208BD2A700450AAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D18794B7208BD2A700450AAE /* Main.storyboard */; };
 		D18794BC208BD2A700450AAE /* InterGrupo_Test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D18794BA208BD2A700450AAE /* InterGrupo_Test.xcdatamodeld */; };
 		D18794BE208BD2A800450AAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D18794BD208BD2A800450AAE /* Assets.xcassets */; };
 		D18794C1208BD2A800450AAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D18794BF208BD2A800450AAE /* LaunchScreen.storyboard */; };
 		D18794CC208BD2A800450AAE /* InterGrupo_TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18794CB208BD2A800450AAE /* InterGrupo_TestTests.swift */; };
 		D18794D7208BD2A800450AAE /* InterGrupo_TestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18794D6208BD2A800450AAE /* InterGrupo_TestUITests.swift */; };
+		D1FF67D7208BD6D800BDCEDC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FF67D6208BD6D800BDCEDC /* Constants.swift */; };
+		D1FF67D9208BD74600BDCEDC /* WSLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FF67D8208BD74600BDCEDC /* WSLogin.swift */; };
+		D1FF67DC208BDA9700BDCEDC /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FF67DB208BDA9700BDCEDC /* LoginVC.swift */; };
+		D1FF67DF208BDACF00BDCEDC /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FF67DE208BDACF00BDCEDC /* LoginPresenter.swift */; };
+		D1FF67E2208BDBFA00BDCEDC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FF67E1208BDBFA00BDCEDC /* User.swift */; };
+		D1FF67E4208BFA5300BDCEDC /* UserManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FF67E3208BFA5300BDCEDC /* UserManagement.swift */; };
 		E614B8E8176CEA824F57B539 /* Pods_InterGrupo_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F08DDC00AD3313067058518 /* Pods_InterGrupo_Test.framework */; };
 		E8C578E8C52B2C0240EE7DF0 /* Pods_InterGrupo_TestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0E2D0443901123D38CC413B /* Pods_InterGrupo_TestUITests.framework */; };
 /* End PBXBuildFile section */
@@ -47,7 +52,6 @@
 		5724FBC727499D74E56311DC /* Pods-InterGrupo-TestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterGrupo-TestUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InterGrupo-TestUITests/Pods-InterGrupo-TestUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D18794B0208BD2A600450AAE /* InterGrupo-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "InterGrupo-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18794B3208BD2A600450AAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D18794B5208BD2A700450AAE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D18794B8208BD2A700450AAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D18794BB208BD2A700450AAE /* InterGrupo_Test.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InterGrupo_Test.xcdatamodel; sourceTree = "<group>"; };
 		D18794BD208BD2A800450AAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,6 +64,12 @@
 		D18794D6208BD2A800450AAE /* InterGrupo_TestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterGrupo_TestUITests.swift; sourceTree = "<group>"; };
 		D18794D8208BD2A800450AAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1DCA7E5D081E8DBE4761F99 /* Pods-InterGrupo-Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterGrupo-Test.release.xcconfig"; path = "Pods/Target Support Files/Pods-InterGrupo-Test/Pods-InterGrupo-Test.release.xcconfig"; sourceTree = "<group>"; };
+		D1FF67D6208BD6D800BDCEDC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D1FF67D8208BD74600BDCEDC /* WSLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSLogin.swift; sourceTree = "<group>"; };
+		D1FF67DB208BDA9700BDCEDC /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		D1FF67DE208BDACF00BDCEDC /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		D1FF67E1208BDBFA00BDCEDC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D1FF67E3208BFA5300BDCEDC /* UserManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagement.swift; sourceTree = "<group>"; };
 		F0E2D0443901123D38CC413B /* Pods_InterGrupo_TestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InterGrupo_TestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -139,8 +149,12 @@
 		D18794B2208BD2A600450AAE /* InterGrupo-Test */ = {
 			isa = PBXGroup;
 			children = (
+				D1FF67E0208BDBEB00BDCEDC /* Model */,
+				D1FF67DD208BDAB800BDCEDC /* Presenters */,
+				D1FF67DA208BDA7C00BDCEDC /* ViewControllers */,
+				D1FF67D5208BD6C200BDCEDC /* Helpers */,
+				D18794E4208BD69800450AAE /* Restful */,
 				D18794B3208BD2A600450AAE /* AppDelegate.swift */,
-				D18794B5208BD2A700450AAE /* ViewController.swift */,
 				D18794B7208BD2A700450AAE /* Main.storyboard */,
 				D18794BD208BD2A800450AAE /* Assets.xcassets */,
 				D18794BF208BD2A800450AAE /* LaunchScreen.storyboard */,
@@ -166,6 +180,47 @@
 				D18794D8208BD2A800450AAE /* Info.plist */,
 			);
 			path = "InterGrupo-TestUITests";
+			sourceTree = "<group>";
+		};
+		D18794E4208BD69800450AAE /* Restful */ = {
+			isa = PBXGroup;
+			children = (
+				D1FF67D8208BD74600BDCEDC /* WSLogin.swift */,
+			);
+			path = Restful;
+			sourceTree = "<group>";
+		};
+		D1FF67D5208BD6C200BDCEDC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D1FF67D6208BD6D800BDCEDC /* Constants.swift */,
+				D1FF67E3208BFA5300BDCEDC /* UserManagement.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D1FF67DA208BDA7C00BDCEDC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D1FF67DB208BDA9700BDCEDC /* LoginVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D1FF67DD208BDAB800BDCEDC /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				D1FF67DE208BDACF00BDCEDC /* LoginPresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		D1FF67E0208BDBEB00BDCEDC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D1FF67E1208BDBFA00BDCEDC /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,9 +395,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-InterGrupo-Test/Pods-InterGrupo-Test-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -455,9 +515,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1FF67DF208BDACF00BDCEDC /* LoginPresenter.swift in Sources */,
 				D18794BC208BD2A700450AAE /* InterGrupo_Test.xcdatamodeld in Sources */,
-				D18794B6208BD2A700450AAE /* ViewController.swift in Sources */,
 				D18794B4208BD2A600450AAE /* AppDelegate.swift in Sources */,
+				D1FF67E4208BFA5300BDCEDC /* UserManagement.swift in Sources */,
+				D1FF67D9208BD74600BDCEDC /* WSLogin.swift in Sources */,
+				D1FF67D7208BD6D800BDCEDC /* Constants.swift in Sources */,
+				D1FF67DC208BDA9700BDCEDC /* LoginVC.swift in Sources */,
+				D1FF67E2208BDBFA00BDCEDC /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,7 +698,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "InterGrupo-Test/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.carlospava.InterGrupo-Test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -648,7 +716,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "InterGrupo-Test/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.carlospava.InterGrupo-Test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -664,7 +735,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "InterGrupo-TestTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.carlospava.InterGrupo-TestTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -681,7 +756,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "InterGrupo-TestTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.carlospava.InterGrupo-TestTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -697,7 +776,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "InterGrupo-TestUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.carlospava.InterGrupo-TestUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -713,7 +796,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "InterGrupo-TestUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.carlospava.InterGrupo-TestUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
