@@ -96,7 +96,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="83" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bsm-xK-GDF">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="125" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bsm-xK-GDF">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
@@ -117,11 +117,73 @@
                     <navigationItem key="navigationItem" id="G1J-E1-cIX"/>
                     <connections>
                         <outlet property="tableView" destination="Bsm-xK-GDF" id="CW2-4K-gel"/>
+                        <segue destination="dm7-O9-1lM" kind="show" identifier="detail" id="9vR-XZ-ga2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uLL-UP-a0A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="28" y="143"/>
+        </scene>
+        <!--Detail ProspectVC-->
+        <scene sceneID="bPl-g1-N4X">
+            <objects>
+                <viewController id="dm7-O9-1lM" customClass="DetailProspectVC" customModule="InterGrupo_Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YOU-R9-UtD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dLo-lA-pi0">
+                                <rect key="frame" x="16" y="117" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Apellido" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5oV-CN-TuV">
+                                <rect key="frame" x="16" y="180" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cedula" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rA3-YK-3pb">
+                                <rect key="frame" x="16" y="239" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Telefono" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gyD-Om-g1I">
+                                <rect key="frame" x="16" y="307" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Myv-Gk-rQQ" firstAttribute="trailing" secondItem="5oV-CN-TuV" secondAttribute="trailing" constant="16" id="2sn-31-C8B"/>
+                            <constraint firstItem="rA3-YK-3pb" firstAttribute="leading" secondItem="Myv-Gk-rQQ" secondAttribute="leading" constant="16" id="IKS-RW-Ah9"/>
+                            <constraint firstItem="Myv-Gk-rQQ" firstAttribute="trailing" secondItem="gyD-Om-g1I" secondAttribute="trailing" constant="16" id="JkM-YA-SFX"/>
+                            <constraint firstItem="Myv-Gk-rQQ" firstAttribute="trailing" secondItem="dLo-lA-pi0" secondAttribute="trailing" constant="16" id="JpU-y6-Pet"/>
+                            <constraint firstItem="rA3-YK-3pb" firstAttribute="top" secondItem="5oV-CN-TuV" secondAttribute="bottom" constant="29" id="MRN-lW-jUA"/>
+                            <constraint firstItem="5oV-CN-TuV" firstAttribute="top" secondItem="dLo-lA-pi0" secondAttribute="bottom" constant="33" id="OOg-H2-Sfy"/>
+                            <constraint firstItem="5oV-CN-TuV" firstAttribute="leading" secondItem="Myv-Gk-rQQ" secondAttribute="leading" constant="16" id="UUd-Wc-5xc"/>
+                            <constraint firstItem="Myv-Gk-rQQ" firstAttribute="trailing" secondItem="rA3-YK-3pb" secondAttribute="trailing" constant="16" id="Upd-7g-UI6"/>
+                            <constraint firstItem="gyD-Om-g1I" firstAttribute="top" secondItem="rA3-YK-3pb" secondAttribute="bottom" constant="38" id="Wzk-I7-FDG"/>
+                            <constraint firstItem="gyD-Om-g1I" firstAttribute="leading" secondItem="Myv-Gk-rQQ" secondAttribute="leading" constant="16" id="btG-PE-b3p"/>
+                            <constraint firstItem="dLo-lA-pi0" firstAttribute="top" secondItem="Myv-Gk-rQQ" secondAttribute="top" constant="53" id="jiS-2r-VFv"/>
+                            <constraint firstItem="dLo-lA-pi0" firstAttribute="leading" secondItem="Myv-Gk-rQQ" secondAttribute="leading" constant="16" id="rcF-OT-DMk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Myv-Gk-rQQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="txtId" destination="rA3-YK-3pb" id="cCV-GO-TcM"/>
+                        <outlet property="txtLastName" destination="5oV-CN-TuV" id="6zp-L9-AQg"/>
+                        <outlet property="txtName" destination="dLo-lA-pi0" id="HP1-PF-M55"/>
+                        <outlet property="txtTelephoneNumber" destination="gyD-Om-g1I" id="1DX-ep-Ryj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8xn-8i-BtP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="744.79999999999995" y="150.67466266866569"/>
         </scene>
     </scenes>
 </document>

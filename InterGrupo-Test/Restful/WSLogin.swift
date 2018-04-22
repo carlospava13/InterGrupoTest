@@ -15,10 +15,15 @@ class WSLogin: NSObject {
         Alamofire.request(Constants.urlLogin(email: email, password: password)).responseJSON { (response) in
             switch response.result{
             case .success(let success):
-                let json = JSON(success)
-                let user = User(json: json)
-               UserManagament.saveUserObject(anUser: user)
-              completion(nil)
+                if response.response?.statusCode == 200{
+                    let json = JSON(success)
+                    let user = User(json: json,password:password,rememberMe:rememberMe)
+                    UserManagament.saveUserObject(anUser: user)
+                    completion(nil)
+                }else{
+                    completion(NSError(domain: "error en login", code: (response.response?.statusCode)!, userInfo: nil))
+                }
+             
                 break
             case .failure(let error):
                 completion(error as NSError)

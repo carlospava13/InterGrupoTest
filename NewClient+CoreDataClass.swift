@@ -2,7 +2,7 @@
 //  NewClient+CoreDataClass.swift
 //  
 //
-//  Created by carlos pava on 21/04/18.
+//  Created by carlos pava on 22/04/18.
 //
 //
 

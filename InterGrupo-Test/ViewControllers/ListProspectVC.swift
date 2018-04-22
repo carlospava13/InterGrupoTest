@@ -25,7 +25,7 @@ class ListProspectVC: BaseCenterVC {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     func setupPresenter(){
         self.presenter = ProspectPresenter(prospectView: self)
         self.presenter?.getListProspect()
@@ -35,6 +35,11 @@ class ListProspectVC: BaseCenterVC {
         let nib = UINib(nibName: "ProspectTableViewCell", bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: "prospectCell")
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let detail = segue.destination as! DetailProspectVC
+        detail.newClient = sender as! NewClient
+        detail.delegate = self
+    }
 }
 extension ListProspectVC:ProspectView{
     func setNewClients(newClients: [NewClient]) {
@@ -43,15 +48,25 @@ extension ListProspectVC:ProspectView{
     }
 }
 
-extension ListProspectVC:UITableViewDataSource{
+extension ListProspectVC:DetailProspectVCDelegate{
+    func reloadNewClients() {
+        self.presenter?.getNewClients()
+    }
+}
+
+extension ListProspectVC:UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.newClients.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "prospectCell") as! ProspectTableViewCell
         let newClient = self.newClients[indexPath.row]
-        cell.labName.text = newClient.name!
-        cell.labAddress.text = newClient.address!
+        cell.newClient = newClient
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let newClient = self.newClients[indexPath.row]
+        performSegue(withIdentifier: "detail", sender: newClient)
     }
 }

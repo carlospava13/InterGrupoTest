@@ -30,6 +30,7 @@ class ProspectPresenter: NSObject {
     
     func getNewClients(){
        let newClients = WSProspect.getNewClientsFromDB()
+        WSProspect.getNewClientUpdated()
         self.prospectView.setNewClients(newClients: newClients)
     }
 }

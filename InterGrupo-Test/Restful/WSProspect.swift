@@ -12,6 +12,8 @@ import Alamofire
 import CoreData
 class WSProspect {
     
+    static let managedContext = CoreDataManager.managedObjectContext
+    
     static func getLisProspect(token:String,completion:@escaping(_ error:NSError?)->()){
         
         Alamofire.request(urlBase + Constants.urlPropects, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["token":token]).responseJSON { (response) in
@@ -35,11 +37,14 @@ class WSProspect {
     
     
     static func savePropectInCoreDate(json:JSON){
-        let managedContext = CoreDataManager.managedObjectContext
         let entity = NSEntityDescription.entity(forEntityName: "NewClient", in: managedContext)
         let newClient =  NewClient(entity: entity!, insertInto: managedContext)
-        newClient.address = json["address"].string
+        
+        newClient.id = json["id"].string
         newClient.name = json["name"].string
+        newClient.surname = json["surname"].string
+        newClient.telephone = json["telephone"].string
+        newClient.roleId = json["roleId"].int64Value
         
         do{
             try managedContext.save()
@@ -50,7 +55,6 @@ class WSProspect {
     
    static func getNewClientsFromDB() ->[NewClient]{
         var newClient = [NewClient]()
-        let managedContext = CoreDataManager.managedObjectContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName:"NewClient")
         do{
             newClient = try managedContext.fetch(request) as! [NewClient]
@@ -61,7 +65,6 @@ class WSProspect {
     }
     
    static func deleteDB(completion:()->(Void)){
-        let managedContext = CoreDataManager.managedObjectContext
         do{
             let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName:"NewClient")
             let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
@@ -70,6 +73,44 @@ class WSProspect {
             completion()
         }catch let error as NSError {
             print("Could not save \(error), \(error.userInfo)")
+        }
+    }
+    
+    static func updateNewClient(id:String,name:String,lastName:String,telephone:String,completion:()->()){
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName:"NewClient")
+        request.predicate = NSPredicate(format: "id == %@", id)
+        do{
+            let edit = try managedContext.fetch(request) as! [NewClient]
+            edit.first?.id = id
+            edit.first?.name = name
+            edit.first?.surname = lastName
+            edit.first?.telephone = telephone
+            edit.first?.update = true
+            try managedContext.save()
+            completion()
+        }catch (let error){
+            print("\n Error \(error.localizedDescription) \n")
+        }
+        
+    }
+    
+    static func getNewClientUpdated(){
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName:"NewClient")
+        request.predicate = NSPredicate(format: "update == %@", NSNumber(value: true))
+        do{
+            let edit = try managedContext.fetch(request) as! [NewClient]
+            for clientUpdated in edit{
+                let dict = [
+                    "name": clientUpdated.name!,
+                    "surname":clientUpdated.surname!,
+                    "id":clientUpdated.id!,
+                    "telephone":clientUpdated.telephone!
+                ]
+                
+                print(JSON(dict))
+            }
+        }catch (let error){
+            print("\n Error \(error.localizedDescription) \n")
         }
     }
     

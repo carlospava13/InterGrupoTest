@@ -8,7 +8,7 @@
 
 import Foundation
 let urlBase = "http://directotesting.igapps.co/"
-
+var rememberMe = false
 struct Constants {
     static let urlLogin = "/application/login/"
     static let urlPropects = "sch/prospects.json"

@@ -18,8 +18,6 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupPresenter()
-        self.txtEmail.text = "directo@directo.com"
-        self.txtPassword.text = "directo123"
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,17 +28,37 @@ class LoginVC: UIViewController {
     
     func setupPresenter(){
         self.presenter = LoginPresenter(loginView: self)
-       
+        if let user = UserManagament.loadUserObject(),user.rememberMe!{
+            self.txtEmail.text = user.email
+            self.txtPassword.text = user.password
+        }
+    }
+    
+    @IBAction func onRememberMe(_ sender: UIButton) {
+      sender.isSelected = !sender.isSelected
+        rememberMe = sender.isSelected
     }
     
     @IBAction func onLogin(_ sender: Any) {
-        self.presenter?.login(email: txtEmail.text!, password: txtPassword.text!)
+        if (self.txtEmail.text?.isValidEmail())!{
+            self.presenter?.login(email: txtEmail.text!, password: txtPassword.text!)
+        }else{
+            self.showAlertCustom(title: "Error en validacion", subTitle: "no es valido este correo")
+        }
+    }
+    
+    func showAlertCustom(title:String,subTitle:String){
+        let alert = UIAlertController(title:title, message: subTitle, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
 extension LoginVC:LoginView{
     func loginError(error: NSError) {
         print(error)
+        self.showAlertCustom(title: "Error", subTitle: error.domain)
     }
     
     func showProspects() {

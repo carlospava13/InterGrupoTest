@@ -43,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func setRootViewControoller(){
-        if UserManagament.loadUserObject() != nil{
+        if UserManagament.loadUserObject()?.authToken != nil{
             self.setMenu()
         }else{
             let storyboard = UIStoryboard(name: "Login", bundle: nil)

@@ -13,6 +13,9 @@
 		D116FD53208CEEC7005A5578 /* DrawerVisualStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D116FD52208CEEC7005A5578 /* DrawerVisualStateManager.swift */; };
 		D116FD56208CF2EB005A5578 /* LeftMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D116FD55208CF2EB005A5578 /* LeftMenuTableViewCell.swift */; };
 		D116FD58208CF56D005A5578 /* BaseCenterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D116FD57208CF56D005A5578 /* BaseCenterVC.swift */; };
+		D116FD5A208D18AF005A5578 /* DetailProspectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D116FD59208D18AF005A5578 /* DetailProspectVC.swift */; };
+		D116FD5C208D1D19005A5578 /* String+ValidateEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D116FD5B208D1D19005A5578 /* String+ValidateEmail.swift */; };
+		D116FD5E208D24AA005A5578 /* DetailProspectPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D116FD5D208D24AA005A5578 /* DetailProspectPresenter.swift */; };
 		D18794B4208BD2A600450AAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18794B3208BD2A600450AAE /* AppDelegate.swift */; };
 		D18794B9208BD2A700450AAE /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D18794B7208BD2A700450AAE /* Login.storyboard */; };
 		D18794BC208BD2A700450AAE /* InterGrupo_Test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D18794BA208BD2A700450AAE /* InterGrupo_Test.xcdatamodeld */; };
@@ -67,6 +70,9 @@
 		D116FD52208CEEC7005A5578 /* DrawerVisualStateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerVisualStateManager.swift; sourceTree = "<group>"; };
 		D116FD55208CF2EB005A5578 /* LeftMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuTableViewCell.swift; sourceTree = "<group>"; };
 		D116FD57208CF56D005A5578 /* BaseCenterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCenterVC.swift; sourceTree = "<group>"; };
+		D116FD59208D18AF005A5578 /* DetailProspectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProspectVC.swift; sourceTree = "<group>"; };
+		D116FD5B208D1D19005A5578 /* String+ValidateEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ValidateEmail.swift"; sourceTree = "<group>"; };
+		D116FD5D208D24AA005A5578 /* DetailProspectPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProspectPresenter.swift; sourceTree = "<group>"; };
 		D18794B0208BD2A600450AAE /* InterGrupo-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "InterGrupo-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18794B3208BD2A600450AAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D18794B8208BD2A700450AAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
@@ -238,6 +244,7 @@
 			children = (
 				D1FF67D6208BD6D800BDCEDC /* Constants.swift */,
 				D1FF67E3208BFA5300BDCEDC /* UserManagement.swift */,
+				D116FD5B208D1D19005A5578 /* String+ValidateEmail.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -251,6 +258,7 @@
 				D1FF67E5208C05F800BDCEDC /* Storyboards */,
 				D1FF67DB208BDA9700BDCEDC /* LoginVC.swift */,
 				D1FF67E8208C078000BDCEDC /* ListProspectVC.swift */,
+				D116FD59208D18AF005A5578 /* DetailProspectVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -260,6 +268,7 @@
 			children = (
 				D1FF67DE208BDACF00BDCEDC /* LoginPresenter.swift */,
 				D1FF67EF208C0D8000BDCEDC /* PropectPresenter.swift */,
+				D116FD5D208D24AA005A5578 /* DetailProspectPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -604,13 +613,16 @@
 				D1FF67D9208BD74600BDCEDC /* WSLogin.swift in Sources */,
 				D1FF67D7208BD6D800BDCEDC /* Constants.swift in Sources */,
 				D116FD4E208CEEA9005A5578 /* MenuItem.swift in Sources */,
+				D116FD5A208D18AF005A5578 /* DetailProspectVC.swift in Sources */,
 				D1FF67DC208BDA9700BDCEDC /* LoginVC.swift in Sources */,
 				D1FF67E9208C078000BDCEDC /* ListProspectVC.swift in Sources */,
 				D1FF67EE208C0B3900BDCEDC /* WSProspect.swift in Sources */,
+				D116FD5C208D1D19005A5578 /* String+ValidateEmail.swift in Sources */,
 				D116FD58208CF56D005A5578 /* BaseCenterVC.swift in Sources */,
 				D116FD51208CEEBE005A5578 /* LeftMenuVC.swift in Sources */,
 				D1FF67F0208C0D8000BDCEDC /* PropectPresenter.swift in Sources */,
 				D116FD56208CF2EB005A5578 /* LeftMenuTableViewCell.swift in Sources */,
+				D116FD5E208D24AA005A5578 /* DetailProspectPresenter.swift in Sources */,
 				D1FF6810208C31C500BDCEDC /* ProspectTableViewCell.swift in Sources */,
 				D1FF67E2208BDBFA00BDCEDC /* User.swift in Sources */,
 			);

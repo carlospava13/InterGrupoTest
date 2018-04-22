@@ -26,7 +26,7 @@ class LeftMenuVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.isHidden = true
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -53,7 +53,9 @@ class LeftMenuVC: UIViewController {
         let login = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
         login.modalTransitionStyle = .crossDissolve
         self.present(login, animated: true) {
-            UserManagament.saveUserObject(anUser: nil)
+            let user = UserManagament.loadUserObject()
+            user?.authToken = nil
+            UserManagament.saveUserObject(anUser: user)
         }
     }
 }
