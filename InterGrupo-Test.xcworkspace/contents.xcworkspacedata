@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:NewClient+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:NewClient+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:InterGrupo-Test.xcodeproj">
    </FileRef>
    <FileRef

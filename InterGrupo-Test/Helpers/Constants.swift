@@ -11,8 +11,10 @@ let urlBase = "http://directotesting.igapps.co/"
 
 struct Constants {
     static let urlLogin = "/application/login/"
-    
+    static let urlPropects = "sch/prospects.json"
     static func urlLogin (email:String, password:String) -> String{
         return urlBase + Constants.urlLogin + "?email=\(email)&password=\(password)"
     }
+    
+    
 }
