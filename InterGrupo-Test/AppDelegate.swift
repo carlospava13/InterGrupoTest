@@ -7,13 +7,12 @@
 //
 
 import UIKit
-import CoreData
-
+import DrawerController
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var drawerController: DrawerController!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         self.setRootViewControoller()
@@ -44,17 +43,53 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func setRootViewControoller(){
-        var root:UIViewController?
         if UserManagament.loadUserObject() != nil{
-            let storyboard = UIStoryboard(name: "Prospect", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "ListProspectVC") as? ListProspectVC
-            root = UINavigationController(rootViewController: vc!)
+            self.setMenu()
         }else{
             let storyboard = UIStoryboard(name: "Login", bundle: nil)
-            root = storyboard.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC
+            let vc = storyboard.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC
+            self.window?.rootViewController = vc
+            self.window?.makeKeyAndVisible()
         }
-        self.window?.rootViewController = root
-        self.window?.makeKeyAndVisible()
     }
+    
+    func setMenu(){
+        let storyBoard = UIStoryboard(name: "Prospect", bundle: nil)
+        let center = storyBoard.instantiateViewController(withIdentifier: "ListProspectVC") as! ListProspectVC
+        let leftVC = storyBoard.instantiateViewController(withIdentifier: "LeftMenuVC") as! LeftMenuVC
+        let navigationController = UINavigationController(rootViewController: center)
+        navigationController.restorationIdentifier = "centerMenu"
+        
+        let leftSideNavController = UINavigationController(rootViewController: leftVC)
+        leftSideNavController.restorationIdentifier = "leftMenu"
+        
+        self.drawerController = DrawerController(centerViewController: navigationController, leftDrawerViewController: leftSideNavController)
+        self.drawerController.showsShadows = true
+        
+        self.drawerController.restorationIdentifier = "Drawer"
+        self.drawerController.maximumRightDrawerWidth = 200.0
+        self.drawerController.drawerVisualStateBlock = { (drawerController, drawerSide, percentVisible) in
+            let block = DrawerVisualStateManager.sharedManager.drawerVisualStateBlock(for: drawerSide)
+            block?(drawerController, drawerSide, percentVisible)
+        }
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+    
+        self.window?.rootViewController?.modalTransitionStyle = .crossDissolve
+        self.window?.rootViewController?.modalPresentationStyle = .custom
+        self.window?.makeKeyAndVisible()
+        self.window?.backgroundColor = UIColor.white
+        
+        let snapshot = (UIApplication.shared.keyWindow?.snapshotView(afterScreenUpdates: true))!
+        center.view.addSubview(snapshot);
+        
+        UIApplication.shared.keyWindow?.rootViewController = center
+        UIView.transition(with: snapshot, duration: 0.4, options: .transitionCrossDissolve, animations: {
+            snapshot.layer.opacity = 0;
+            self.window?.rootViewController = self.drawerController
+        }, completion: { (status) in
+            snapshot.removeFromSuperview()
+        })
+    }
+    
 }
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ListProspectVC: UIViewController {
+class ListProspectVC: BaseCenterVC {
 
     @IBOutlet weak var tableView: UITableView!
     private var presenter:ProspectPresenter?

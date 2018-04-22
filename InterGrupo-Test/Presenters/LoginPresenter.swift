@@ -10,7 +10,7 @@ import UIKit
 
 protocol LoginView {
     func loginError(error:NSError)
-    func saveToken(token:String)
+    func showProspects()
 }
 
 
@@ -27,7 +27,7 @@ class LoginPresenter: NSObject {
             if (error != nil){
                 self.loginView.loginError(error: error!)
             }else{
-                self.loginView.saveToken(token: "token")
+                self.loginView.showProspects()
             }
         }
     }

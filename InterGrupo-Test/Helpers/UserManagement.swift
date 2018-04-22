@@ -9,10 +9,14 @@
 import Foundation
 struct UserManagament {
     
-    static func saveUserObject(anUser: User){
+    static func saveUserObject(anUser: User?){
         let defaults = UserDefaults.standard
-        let savedData = NSKeyedArchiver.archivedData(withRootObject: anUser)
-        defaults.set(savedData, forKey: "user")
+        if let user = anUser{
+            let savedData = NSKeyedArchiver.archivedData(withRootObject: user)
+            defaults.set(savedData, forKey: "user")
+        }else{
+            defaults.removeObject(forKey: "user")
+        }
         defaults.synchronize()
     }
     

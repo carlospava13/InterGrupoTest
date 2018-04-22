@@ -6,7 +6,7 @@ target 'InterGrupo-Test' do
   use_frameworks!
   pod 'Alamofire'
   pod 'SwiftyJSON', '~> 4.0'
- 
+  pod 'DrawerController', '~> 4.0'
   # Pods for InterGrupo-Test
 
   target 'InterGrupo-TestTests' do

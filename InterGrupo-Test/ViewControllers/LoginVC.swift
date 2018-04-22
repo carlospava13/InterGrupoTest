@@ -36,10 +36,6 @@ class LoginVC: UIViewController {
     @IBAction func onLogin(_ sender: Any) {
         self.presenter?.login(email: txtEmail.text!, password: txtPassword.text!)
     }
-    @IBAction func onShowUser(_ sender: Any) {
-        let user = UserManagament.loadUserObject()
-        print(user?.authToken)
-    }
 }
 
 extension LoginVC:LoginView{
@@ -47,7 +43,8 @@ extension LoginVC:LoginView{
         print(error)
     }
     
-    func saveToken(token: String) {
-        print("\n LOGIN \n")
+    func showProspects() {
+        let appDelegate =  UIApplication.shared.delegate as? AppDelegate
+        appDelegate?.setMenu()
     }
 }

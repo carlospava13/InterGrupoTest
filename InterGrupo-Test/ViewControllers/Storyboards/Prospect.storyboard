@@ -6,10 +6,72 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Left MenuVC-->
+        <scene sceneID="GhT-a5-PHZ">
+            <objects>
+                <viewController storyboardIdentifier="LeftMenuVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pAD-k4-z4b" customClass="LeftMenuVC" customModule="InterGrupo_Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RyL-y2-gXF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zGp-1P-C2U">
+                                <rect key="frame" x="0.0" y="146" width="375" height="521"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="leftmenu" id="Dcw-rs-qBv" customClass="LeftMenuTableViewCell" customModule="InterGrupo_Test" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Dcw-rs-qBv" id="WSh-uX-PSU">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oT4-el-CPM">
+                                                    <rect key="frame" x="15" y="11" width="345" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="oT4-el-CPM" firstAttribute="leading" secondItem="WSh-uX-PSU" secondAttribute="leadingMargin" id="2yM-fp-GBr"/>
+                                                <constraint firstItem="oT4-el-CPM" firstAttribute="top" secondItem="WSh-uX-PSU" secondAttribute="topMargin" id="Rew-aO-JMW"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="oT4-el-CPM" secondAttribute="trailing" id="f6r-EO-fpS"/>
+                                                <constraint firstItem="oT4-el-CPM" firstAttribute="bottom" secondItem="WSh-uX-PSU" secondAttribute="bottomMargin" id="pRh-Sa-WLe"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="labMenuItem" destination="oT4-el-CPM" id="1vE-Az-d3J"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="pAD-k4-z4b" id="xwR-DQ-HRg"/>
+                                    <outlet property="delegate" destination="pAD-k4-z4b" id="x9e-tM-p0w"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ngg-AE-K33" firstAttribute="bottom" secondItem="zGp-1P-C2U" secondAttribute="bottom" id="RAC-CF-4qO"/>
+                            <constraint firstItem="Ngg-AE-K33" firstAttribute="trailing" secondItem="zGp-1P-C2U" secondAttribute="trailing" id="UY6-ku-lq5"/>
+                            <constraint firstItem="zGp-1P-C2U" firstAttribute="leading" secondItem="Ngg-AE-K33" secondAttribute="leading" id="dQu-5c-b1E"/>
+                            <constraint firstItem="zGp-1P-C2U" firstAttribute="top" secondItem="Ngg-AE-K33" secondAttribute="top" constant="126" id="qxw-eF-g3h"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ngg-AE-K33"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="zGp-1P-C2U" id="ppE-MO-lCZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AEr-HF-YrI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-716" y="-539.28035982008998"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="oh7-rb-nJM">
             <objects>
