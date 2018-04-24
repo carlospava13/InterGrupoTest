@@ -14,6 +14,7 @@ class ProspectTableViewCell: UITableViewCell {
     @IBOutlet weak var labId: UILabel!
     @IBOutlet weak var labTelephoneNumber: UILabel!
     
+    @IBOutlet weak var imgStatusCd: UIImageView!
     var newClient:NewClient?{
         willSet{
             self.setNewClientToView(newClient: newValue)
@@ -35,6 +36,29 @@ class ProspectTableViewCell: UITableViewCell {
         self.labLasName.text = newClient?.surname
         self.labId.text = newClient?.id
         self.labTelephoneNumber.text = newClient?.telephone
+        
+        let status:Int16 = (newClient?.statusCd)!
+        let state = State(state: Int(status))
+        let imgState:UIImage!
+        switch state {
+        case .pending:
+            imgState = UIImage(named: "pending")
+            break
+        case .approved:
+            imgState = UIImage(named: "approved")
+            break
+        case .accepted:
+            imgState = UIImage(named: "accepted")
+            break
+        case .rejected:
+            imgState = UIImage(named: "rejected")
+            break
+        case .disabled:
+            imgState = UIImage(named: "disabled")
+            break
+        }
+        
+        self.imgStatusCd.image = imgState
     }
     
 }

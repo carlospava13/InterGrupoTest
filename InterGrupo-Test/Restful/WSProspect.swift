@@ -44,7 +44,7 @@ class WSProspect {
         newClient.name = json["name"].string
         newClient.surname = json["surname"].string
         newClient.telephone = json["telephone"].string
-        newClient.roleId = json["roleId"].int64Value
+        newClient.statusCd = json["statusCd"].int16Value
         
         do{
             try managedContext.save()
@@ -100,11 +100,12 @@ class WSProspect {
         do{
             let edit = try managedContext.fetch(request) as! [NewClient]
             for clientUpdated in edit{
-                let dict = [
+                let dict:[String:Any] = [
                     "name": clientUpdated.name!,
                     "surname":clientUpdated.surname!,
                     "id":clientUpdated.id!,
-                    "telephone":clientUpdated.telephone!
+                    "telephone":clientUpdated.telephone!,
+                    "statusCd":clientUpdated.statusCd
                 ]
                 
                 print(JSON(dict))

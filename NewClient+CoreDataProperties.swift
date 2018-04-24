@@ -2,7 +2,7 @@
 //  NewClient+CoreDataProperties.swift
 //  
 //
-//  Created by carlos pava on 22/04/18.
+//  Created by carlos pava on 23/04/18.
 //
 //
 
@@ -18,9 +18,9 @@ extension NewClient {
 
     @NSManaged public var id: String?
     @NSManaged public var name: String?
-    @NSManaged public var roleId: Int64
     @NSManaged public var surname: String?
     @NSManaged public var telephone: String?
     @NSManaged public var update: Bool
+    @NSManaged public var statusCd: Int16
 
 }
